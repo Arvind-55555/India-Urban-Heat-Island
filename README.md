@@ -5,17 +5,6 @@
 [![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)](https://opensource.org/licenses/MIT)
 [![Data Sources](https://img.shields.io/badge/Data-Real--time%20APIs-green.svg)](# "Open-Meteo, Open-Elevation")
 
-## 🌐 Live Dashboard
-
-**View the Interactive Dashboard:** [https://arvind-55555.github.io/India-Urban-Heat-Island/](https://arvind-55555.github.io/India-Urban-Heat-Island/)
-
-Experience the complete UHI analysis with:
-- 📊 Interactive visualizations
-- 🔍 Key insights and findings
-- 📈 Top cities by UHI intensity
-- 🌳 Vegetation impact analysis
-- 💡 Actionable recommendations
-
 ---
 
 ## Project Overview
@@ -30,6 +19,18 @@ A comprehensive Urban Heat Island monitoring and analysis system that collects r
 - ✅ **Advanced UHI analysis** with correlation studies
 - ✅ **Publication-ready visualizations** and reports
 - ✅ **Actionable insights** for urban planning and policy
+
+---
+## Live Dashboard
+
+**View the Interactive Dashboard:** [https://arvind-55555.github.io/India-Urban-Heat-Island/](https://arvind-55555.github.io/India-Urban-Heat-Island/)
+
+Experience the complete UHI analysis with:
+- 📊 Interactive visualizations
+- 🔍 Key insights and findings
+- 📈 Top cities by UHI intensity
+- 🌳 Vegetation impact analysis
+- 💡 Actionable recommendations
 
 ---
 
@@ -81,7 +82,7 @@ pip install -r requirements.txt
 
 ### Usage
 
-#### 🌐 View Web Dashboard (Recommended)
+#### View Web Dashboard
 
 ```bash
 # Launch interactive web dashboard
