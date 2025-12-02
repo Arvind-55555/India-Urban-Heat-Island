@@ -1,0 +1,23 @@
+================================================================================
+URBAN HEAT ISLAND ANALYSIS SUMMARY
+50 Major Indian Cities
+================================================================================
+
+Generated: 2025-12-02 12:54:42
+
+KEY FINDINGS:
+--------------------------------------------------------------------------------
+1. Average UHI Intensity: 2.35°C
+2. Highest UHI: Ghaziabad (3.92°C)
+3. Lowest UHI: Bangalore (0.50°C)
+4. Average Impervious Surface: 64.6%
+5. Average NDVI: 0.107
+6. Average Urban Greenness: 19.9%
+
+CORRELATION WITH UHI INTENSITY:
+--------------------------------------------------------------------------------
+Impervious Surface (%)                       : +0.742
+NDVI                                         : -0.704
+Population Density (people/km²)              : +0.270
+Anthropogenic Heat Flux (W/m²)               : +0.215
+Wind Speed (km/h)                            : -0.543

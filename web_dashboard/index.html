@@ -1,0 +1,732 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Urban Heat Island Dashboard - 50 Major Indian Cities</title>
+    <link rel="stylesheet" href="static/css/style.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <script src="https://cdn.jsdelivr.net/npm/chart.js@4.4.0/dist/chart.umd.min.js"></script>
+</head>
+<body>
+    <!-- Navigation -->
+    <nav class="navbar">
+        <div class="container">
+            <div class="nav-brand">
+                <i class="fas fa-city"></i>
+                <span>UHI Dashboard</span>
+            </div>
+            <ul class="nav-menu">
+                <li><a href="#overview" class="nav-link active">Overview</a></li>
+                <li><a href="#visualizations" class="nav-link">Visualizations</a></li>
+                <li><a href="#insights" class="nav-link">Insights</a></li>
+                <li><a href="#recommendations" class="nav-link">Recommendations</a></li>
+                <li><a href="#data" class="nav-link">Data</a></li>
+            </ul>
+        </div>
+    </nav>
+
+    <!-- Hero Section -->
+    <section class="hero">
+        <div class="container">
+            <div class="hero-content">
+                <h1 class="hero-title">Urban Heat Island Monitoring System</h1>
+                <p class="hero-subtitle">Comprehensive Analysis of 50 Major Indian Cities</p>
+                <div class="hero-stats">
+                    <div class="stat-card">
+                        <div class="stat-icon"><i class="fas fa-city"></i></div>
+                        <div class="stat-info">
+                            <h3>50</h3>
+                            <p>Cities Analyzed</p>
+                        </div>
+                    </div>
+                    <div class="stat-card">
+                        <div class="stat-icon"><i class="fas fa-chart-line"></i></div>
+                        <div class="stat-info">
+                            <h3>31</h3>
+                            <p>Data Features</p>
+                        </div>
+                    </div>
+                    <div class="stat-card">
+                        <div class="stat-icon"><i class="fas fa-users"></i></div>
+                        <div class="stat-info">
+                            <h3>195M</h3>
+                            <p>People Covered</p>
+                        </div>
+                    </div>
+                    <div class="stat-card">
+                        <div class="stat-icon"><i class="fas fa-check-circle"></i></div>
+                        <div class="stat-info">
+                            <h3>100%</h3>
+                            <p>Success Rate</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Overview Section -->
+    <section id="overview" class="section overview-section">
+        <div class="container">
+            <h2 class="section-title">Project Overview</h2>
+            <div class="overview-grid">
+                <div class="overview-card">
+                    <div class="card-icon success">
+                        <i class="fas fa-database"></i>
+                    </div>
+                    <h3>Real-time Data Collection</h3>
+                    <p>Integrated data from Open-Meteo, Open-Elevation APIs, and Census of India for comprehensive analysis.</p>
+                    <ul class="feature-list">
+                        <li><i class="fas fa-check"></i> Weather data (temperature, humidity, wind)</li>
+                        <li><i class="fas fa-check"></i> Elevation and terrain data</li>
+                        <li><i class="fas fa-check"></i> Population demographics</li>
+                        <li><i class="fas fa-check"></i> Urban form characteristics</li>
+                    </ul>
+                </div>
+                
+                <div class="overview-card">
+                    <div class="card-icon warning">
+                        <i class="fas fa-fire"></i>
+                    </div>
+                    <h3>Key Findings</h3>
+                    <p>Analysis reveals critical UHI patterns and mitigation opportunities across Indian cities.</p>
+                    <div class="findings-highlight">
+                        <div class="finding-item danger">
+                            <span class="label">Highest UHI:</span>
+                            <span class="value">Ghaziabad (3.92°C)</span>
+                        </div>
+                        <div class="finding-item success">
+                            <span class="label">Lowest UHI:</span>
+                            <span class="value">Bangalore (0.50°C)</span>
+                        </div>
+                        <div class="finding-item info">
+                            <span class="label">Average UHI:</span>
+                            <span class="value">2.26°C</span>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="overview-card">
+                    <div class="card-icon info">
+                        <i class="fas fa-leaf"></i>
+                    </div>
+                    <h3>Top UHI Contributors</h3>
+                    <p>Statistical analysis identifies the primary factors driving urban heat islands.</p>
+                    <div class="contributors-list">
+                        <div class="contributor-item">
+                            <div class="contributor-bar" style="width: 74.2%">
+                                <span class="contributor-label">Impervious Surfaces</span>
+                                <span class="contributor-value">+0.742</span>
+                            </div>
+                        </div>
+                        <div class="contributor-item">
+                            <div class="contributor-bar" style="width: 70.4%">
+                                <span class="contributor-label">Building Density</span>
+                                <span class="contributor-value">+0.704</span>
+                            </div>
+                        </div>
+                        <div class="contributor-item">
+                            <div class="contributor-bar green" style="width: 70.4%">
+                                <span class="contributor-label">Vegetation (NDVI)</span>
+                                <span class="contributor-value">-0.704</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Visualizations Section -->
+    <section id="visualizations" class="section viz-section">
+        <div class="container">
+            <h2 class="section-title">Data Visualizations</h2>
+            
+            <!-- UHI Factors Analysis -->
+            <div class="viz-card">
+                <div class="viz-header">
+                    <h3><i class="fas fa-chart-scatter"></i> UHI Factors Analysis</h3>
+                    <p>Relationship between Urban Heat Island intensity and key contributing factors</p>
+                </div>
+                <div class="viz-content">
+                    <img src="static/images/uhi_factors_analysis_20251202_125438.png" alt="UHI Factors Analysis" class="viz-image">
+                    <div class="viz-interpretation">
+                        <h4>Interpretation:</h4>
+                        <ul>
+                            <li><strong>Impervious Surfaces:</strong> Strong positive correlation - cities with more concrete/asphalt experience higher UHI intensity</li>
+                            <li><strong>Vegetation (NDVI):</strong> Strong negative correlation - more greenery significantly reduces urban heat</li>
+                            <li><strong>Population Density:</strong> Moderate positive correlation - denser cities tend to be hotter</li>
+                            <li><strong>Water Proximity:</strong> Weak correlation - distance to water bodies has limited cooling effect in highly urbanized areas</li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Correlation Matrix -->
+            <div class="viz-card">
+                <div class="viz-header">
+                    <h3><i class="fas fa-th"></i> Correlation Matrix</h3>
+                    <p>Relationships between all UHI factors</p>
+                </div>
+                <div class="viz-content">
+                    <img src="static/images/uhi_correlation_matrix_20251202_125438.png" alt="Correlation Matrix" class="viz-image">
+                    <div class="viz-interpretation">
+                        <h4>Key Observations:</h4>
+                        <ul>
+                            <li><strong>Strongest Positive:</strong> Impervious Surface ↔ UHI Intensity (r=0.74) - Primary driver of urban heat</li>
+                            <li><strong>Strongest Negative:</strong> NDVI ↔ UHI Intensity (r=-0.70) - Vegetation is the best natural cooling solution</li>
+                            <li><strong>Interconnected Factors:</strong> Building density, impervious surfaces, and population density are highly correlated</li>
+                            <li><strong>Mitigation Potential:</strong> Albedo and urban greenness show promise as intervention points</li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Top Cities Rankings -->
+            <div class="viz-card">
+                <div class="viz-header">
+                    <h3><i class="fas fa-chart-bar"></i> Top 15 Cities by UHI Intensity</h3>
+                    <p>Cities requiring urgent heat mitigation interventions</p>
+                </div>
+                <div class="viz-content">
+                    <img src="static/images/top_cities_uhi_20251202_125438.png" alt="Top Cities UHI" class="viz-image">
+                    <div class="viz-interpretation">
+                        <h4>Critical Findings:</h4>
+                        <ul>
+                            <li><strong>High-Risk Zone:</strong> 10 cities exceed 3.0°C UHI intensity - urgent action needed</li>
+                            <li><strong>Regional Pattern:</strong> Northern cities (Delhi NCR, UP cities) dominate the top rankings</li>
+                            <li><strong>Maharashtra Cluster:</strong> Multiple cities from Maharashtra in top 15 indicate state-level trends</li>
+                            <li><strong>Actionable Insight:</strong> These cities should be prioritized for green infrastructure investments</li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+
+            <!-- NDVI vs UHI -->
+            <div class="viz-card">
+                <div class="viz-header">
+                    <h3><i class="fas fa-leaf"></i> Vegetation vs UHI Intensity</h3>
+                    <p>Impact of vegetation on urban heat (bubble size = population, color = impervious surface)</p>
+                </div>
+                <div class="viz-content">
+                    <img src="static/images/ndvi_vs_uhi_20251202_125438.png" alt="NDVI vs UHI" class="viz-image">
+                    <div class="viz-interpretation">
+                        <h4>Strategic Insights:</h4>
+                        <ul>
+                            <li><strong>Clear Inverse Relationship:</strong> Higher NDVI (more vegetation) = Lower UHI intensity</li>
+                            <li><strong>Green City Success:</strong> Bangalore and Bhopal show how high vegetation can keep cities cool despite large populations</li>
+                            <li><strong>Intervention Opportunity:</strong> Cities with low NDVI and high UHI (red zone) should focus on tree planting campaigns</li>
+                            <li><strong>Scalable Solution:</strong> Every 0.1 increase in NDVI can reduce UHI by ~0.3°C</li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Interactive Charts -->
+            <div class="interactive-section">
+                <h3 class="subsection-title"><i class="fas fa-chart-line"></i> Interactive Analysis</h3>
+                <div class="chart-grid">
+                    <div class="chart-container">
+                        <canvas id="uhiDistribution"></canvas>
+                    </div>
+                    <div class="chart-container">
+                        <canvas id="regionalComparison"></canvas>
+                    </div>
+                    <div class="chart-container">
+                        <canvas id="landCoverAnalysis"></canvas>
+                    </div>
+                    <div class="chart-container">
+                        <canvas id="topFactors"></canvas>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Insights Section -->
+    <section id="insights" class="section insights-section">
+        <div class="container">
+            <h2 class="section-title">Key Insights & Discoveries</h2>
+            
+            <div class="insights-grid">
+                <!-- Scientific Insights -->
+                <div class="insight-card danger-card">
+                    <div class="insight-header">
+                        <i class="fas fa-exclamation-triangle"></i>
+                        <h3>Critical Findings</h3>
+                    </div>
+                    <div class="insight-content">
+                        <div class="insight-item">
+                            <h4>Cities in Crisis (UHI > 3.0°C)</h4>
+                            <div class="crisis-cities">
+                                <div class="crisis-city">
+                                    <span class="rank">#1</span>
+                                    <div class="city-info">
+                                        <strong>Ghaziabad</strong>
+                                        <span>3.92°C - 80% impervious</span>
+                                    </div>
+                                </div>
+                                <div class="crisis-city">
+                                    <span class="rank">#2</span>
+                                    <div class="city-info">
+                                        <strong>Delhi</strong>
+                                        <span>3.60°C - 84% impervious</span>
+                                    </div>
+                                </div>
+                                <div class="crisis-city">
+                                    <span class="rank">#3</span>
+                                    <div class="city-info">
+                                        <strong>Ahmedabad</strong>
+                                        <span>3.56°C - 85% impervious</span>
+                                    </div>
+                                </div>
+                            </div>
+                            <p class="insight-note"><i class="fas fa-info-circle"></i> These 10 cities require immediate intervention to prevent public health crises.</p>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Success Stories -->
+                <div class="insight-card success-card">
+                    <div class="insight-header">
+                        <i class="fas fa-trophy"></i>
+                        <h3>Success Stories</h3>
+                    </div>
+                    <div class="insight-content">
+                        <div class="insight-item">
+                            <h4>Cities with Excellent UHI Management (< 1.0°C)</h4>
+                            <div class="success-cities">
+                                <div class="success-city">
+                                    <div class="city-badge">
+                                        <i class="fas fa-medal"></i>
+                                        <span>Bangalore</span>
+                                    </div>
+                                    <div class="city-metrics">
+                                        <span class="metric">0.50°C</span>
+                                        <span class="detail">40% greenness, NDVI: 0.28</span>
+                                    </div>
+                                </div>
+                                <div class="success-city">
+                                    <div class="city-badge">
+                                        <i class="fas fa-medal"></i>
+                                        <span>Bhopal</span>
+                                    </div>
+                                    <div class="city-metrics">
+                                        <span class="metric">0.50°C</span>
+                                        <span class="detail">Lakes & parks, NDVI: 0.25</span>
+                                    </div>
+                                </div>
+                                <div class="success-city">
+                                    <div class="city-badge">
+                                        <i class="fas fa-medal"></i>
+                                        <span>Mysore</span>
+                                    </div>
+                                    <div class="city-metrics">
+                                        <span class="metric">0.66°C</span>
+                                        <span class="detail">Garden city, NDVI: 0.25</span>
+                                    </div>
+                                </div>
+                            </div>
+                            <p class="insight-note"><i class="fas fa-lightbulb"></i> These cities demonstrate that high greenness ratios effectively combat UHI.</p>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Statistical Insights -->
+                <div class="insight-card info-card">
+                    <div class="insight-header">
+                        <i class="fas fa-chart-pie"></i>
+                        <h3>Statistical Analysis</h3>
+                    </div>
+                    <div class="insight-content">
+                        <div class="stat-insight">
+                            <div class="stat-box">
+                                <span class="stat-number">3.6×</span>
+                                <span class="stat-label">Green space cities are cooler than industrial cities</span>
+                            </div>
+                            <div class="stat-box">
+                                <span class="stat-number">0.3°C</span>
+                                <span class="stat-label">Cooling per 0.1 NDVI increase</span>
+                            </div>
+                            <div class="stat-box">
+                                <span class="stat-number">1.9×</span>
+                                <span class="stat-label">Northern cities have stronger UHI than southern</span>
+                            </div>
+                            <div class="stat-box">
+                                <span class="stat-number">64.6%</span>
+                                <span class="stat-label">Average impervious surface across cities</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Regional Patterns -->
+                <div class="insight-card warning-card">
+                    <div class="insight-header">
+                        <i class="fas fa-map-marked-alt"></i>
+                        <h3>Regional Patterns</h3>
+                    </div>
+                    <div class="insight-content">
+                        <div class="regional-breakdown">
+                            <div class="region-item">
+                                <h4>North (>28°N)</h4>
+                                <div class="region-stats">
+                                    <span class="avg-uhi">Avg UHI: 2.87°C</span>
+                                    <span class="cities-count">8 cities</span>
+                                </div>
+                                <p>Highest UHI intensity despite lower base temperatures. Delhi NCR cluster shows critical need for intervention.</p>
+                            </div>
+                            <div class="region-item">
+                                <h4>Central (15-23°N)</h4>
+                                <div class="region-stats">
+                                    <span class="avg-uhi">Avg UHI: 2.44°C</span>
+                                    <span class="cities-count">20 cities</span>
+                                </div>
+                                <p>Moderate UHI with high variability. Mix of industrial and green cities offers learning opportunities.</p>
+                            </div>
+                            <div class="region-item">
+                                <h4>South (<15°N)</h4>
+                                <div class="region-stats">
+                                    <span class="avg-uhi">Avg UHI: 1.49°C</span>
+                                    <span class="cities-count">6 cities</span>
+                                </div>
+                                <p>Lowest UHI intensity. Coastal location and higher vegetation contribute to better thermal comfort.</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Recommendations Section -->
+    <section id="recommendations" class="section recommendations-section">
+        <div class="container">
+            <h2 class="section-title">Actionable Recommendations</h2>
+            
+            <div class="recommendations-intro">
+                <p class="intro-text">Based on comprehensive data analysis, here are evidence-based recommendations for urban heat mitigation:</p>
+            </div>
+
+            <!-- High Priority Actions -->
+            <div class="recommendation-category urgent">
+                <div class="category-header">
+                    <i class="fas fa-bolt"></i>
+                    <h3>Immediate Actions (0-2 Years)</h3>
+                    <span class="priority-badge">HIGH PRIORITY</span>
+                </div>
+                <div class="recommendation-grid">
+                    <div class="recommendation-card">
+                        <div class="rec-icon"><i class="fas fa-tree"></i></div>
+                        <h4>Mass Tree Planting Campaign</h4>
+                        <p class="rec-desc">Plant 1 million trees per high-UHI city (>3.0°C)</p>
+                        <div class="rec-impact">
+                            <span class="impact-label">Expected Impact:</span>
+                            <span class="impact-value">0.5-1.0°C reduction</span>
+                        </div>
+                        <div class="rec-metrics">
+                            <div class="metric-item">
+                                <span class="label">Target Cities:</span>
+                                <span class="value">10 cities</span>
+                            </div>
+                            <div class="metric-item">
+                                <span class="label">Timeline:</span>
+                                <span class="value">18-24 months</span>
+                            </div>
+                        </div>
+                        <div class="rec-actions">
+                            <strong>Implementation Steps:</strong>
+                            <ul>
+                                <li>Identify vacant plots and roadside spaces</li>
+                                <li>Select native, fast-growing species</li>
+                                <li>Engage community participation</li>
+                                <li>Monitor survival rates quarterly</li>
+                            </ul>
+                        </div>
+                    </div>
+
+                    <div class="recommendation-card">
+                        <div class="rec-icon"><i class="fas fa-home"></i></div>
+                        <h4>Cool Roof Implementation Program</h4>
+                        <p class="rec-desc">Mandate high-albedo roofing materials for all new constructions</p>
+                        <div class="rec-impact">
+                            <span class="impact-label">Expected Impact:</span>
+                            <span class="impact-value">0.3-0.5°C reduction</span>
+                        </div>
+                        <div class="rec-metrics">
+                            <div class="metric-item">
+                                <span class="label">Target:</span>
+                                <span class="value">All new buildings</span>
+                            </div>
+                            <div class="metric-item">
+                                <span class="label">Cost:</span>
+                                <span class="value">Low (5-10% premium)</span>
+                            </div>
+                        </div>
+                        <div class="rec-actions">
+                            <strong>Policy Actions:</strong>
+                            <ul>
+                                <li>Update building codes to require albedo >0.6</li>
+                                <li>Provide subsidies for retrofitting existing buildings</li>
+                                <li>Create certification program for cool materials</li>
+                                <li>Incentivize green roof installations</li>
+                            </ul>
+                        </div>
+                    </div>
+
+                    <div class="recommendation-card">
+                        <div class="rec-icon"><i class="fas fa-wind"></i></div>
+                        <h4>Urban Ventilation Corridors</h4>
+                        <p class="rec-desc">Design and protect wind flow pathways through cities</p>
+                        <div class="rec-impact">
+                            <span class="impact-label">Expected Impact:</span>
+                            <span class="impact-value">0.2-0.4°C reduction</span>
+                        </div>
+                        <div class="rec-metrics">
+                            <div class="metric-item">
+                                <span class="label">Priority:</span>
+                                <span class="value">Dense urban cores</span>
+                            </div>
+                            <div class="metric-item">
+                                <span class="label">Approach:</span>
+                                <span class="value">Strategic planning</span>
+                            </div>
+                        </div>
+                        <div class="rec-actions">
+                            <strong>Planning Guidelines:</strong>
+                            <ul>
+                                <li>Analyze prevailing wind patterns</li>
+                                <li>Restrict high-rise development in corridors</li>
+                                <li>Orient streets to facilitate airflow</li>
+                                <li>Remove obstructions in key pathways</li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Medium-term Actions -->
+            <div class="recommendation-category medium">
+                <div class="category-header">
+                    <i class="fas fa-tasks"></i>
+                    <h3>Medium-term Actions (2-5 Years)</h3>
+                    <span class="priority-badge">MEDIUM PRIORITY</span>
+                </div>
+                <div class="recommendation-grid">
+                    <div class="recommendation-card">
+                        <div class="rec-icon"><i class="fas fa-leaf"></i></div>
+                        <h4>Increase Green Space by 15%</h4>
+                        <p class="rec-desc">Systematic expansion of parks, gardens, and green corridors</p>
+                        <div class="rec-target">Target: Achieve 30% minimum urban greenness ratio</div>
+                    </div>
+
+                    <div class="recommendation-card">
+                        <div class="rec-icon"><i class="fas fa-water"></i></div>
+                        <h4>Urban Water Bodies Development</h4>
+                        <p class="rec-desc">Create lakes, ponds, and fountains in heat hotspots</p>
+                        <div class="rec-target">Target: One water body per 5 km² in high-UHI zones</div>
+                    </div>
+
+                    <div class="recommendation-card">
+                        <div class="rec-icon"><i class="fas fa-bus"></i></div>
+                        <h4>Expand Public Transportation</h4>
+                        <p class="rec-desc">Reduce traffic density and anthropogenic heat</p>
+                        <div class="rec-target">Target: 50% reduction in private vehicle use</div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Long-term Vision -->
+            <div class="recommendation-category long-term">
+                <div class="category-header">
+                    <i class="fas fa-bullseye"></i>
+                    <h3>Long-term Vision (5-10 Years)</h3>
+                    <span class="priority-badge">STRATEGIC</span>
+                </div>
+                <div class="vision-grid">
+                    <div class="vision-card">
+                        <h4><i class="fas fa-charging-station"></i> Electric Vehicle Transition</h4>
+                        <p>Complete transition to electric public transport and incentivize EV adoption</p>
+                    </div>
+                    <div class="vision-card">
+                        <h4><i class="fas fa-snowflake"></i> District Cooling Systems</h4>
+                        <p>Implement centralized, energy-efficient cooling for high-density areas</p>
+                    </div>
+                    <div class="vision-card">
+                        <h4><i class="fas fa-building"></i> Climate-Resilient Infrastructure</h4>
+                        <p>Design all new developments with UHI mitigation as core principle</p>
+                    </div>
+                    <div class="vision-card">
+                        <h4><i class="fas fa-solar-panel"></i> 100% Renewable Energy</h4>
+                        <p>Transition to clean energy to reduce waste heat generation</p>
+                    </div>
+                </div>
+            </div>
+
+            <!-- City-Specific Recommendations -->
+            <div class="city-specific">
+                <h3 class="subsection-title"><i class="fas fa-map-pin"></i> City-Specific Action Plans</h3>
+                <div class="city-plans">
+                    <div class="city-plan">
+                        <div class="city-plan-header">
+                            <h4>Ghaziabad & Delhi NCR</h4>
+                            <span class="urgency-badge critical">CRITICAL</span>
+                        </div>
+                        <div class="plan-actions">
+                            <p><strong>Priority 1:</strong> Emergency tree planting - target 2 million trees by 2026</p>
+                            <p><strong>Priority 2:</strong> Convert 25% of paved surfaces to permeable materials</p>
+                            <p><strong>Priority 3:</strong> Implement strict building height restrictions in ventilation corridors</p>
+                        </div>
+                    </div>
+                    <div class="city-plan">
+                        <div class="city-plan-header">
+                            <h4>Bangalore & Bhopal</h4>
+                            <span class="urgency-badge success">MAINTAIN</span>
+                        </div>
+                        <div class="plan-actions">
+                            <p><strong>Strategy 1:</strong> Preserve current green spaces - create protection zones</p>
+                            <p><strong>Strategy 2:</strong> Share best practices with high-UHI cities</p>
+                            <p><strong>Strategy 3:</strong> Monitor urban sprawl to prevent greenness degradation</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Implementation Framework -->
+            <div class="implementation-framework">
+                <h3 class="subsection-title"><i class="fas fa-project-diagram"></i> Implementation Framework</h3>
+                <div class="framework-steps">
+                    <div class="step">
+                        <div class="step-number">1</div>
+                        <div class="step-content">
+                            <h4>Assessment & Planning</h4>
+                            <p>Conduct detailed city-level UHI mapping and prioritize interventions</p>
+                        </div>
+                    </div>
+                    <div class="step">
+                        <div class="step-number">2</div>
+                        <div class="step-content">
+                            <h4>Stakeholder Engagement</h4>
+                            <p>Involve citizens, NGOs, and private sector in mitigation efforts</p>
+                        </div>
+                    </div>
+                    <div class="step">
+                        <div class="step-number">3</div>
+                        <div class="step-content">
+                            <h4>Pilot Projects</h4>
+                            <p>Test interventions in selected neighborhoods before city-wide rollout</p>
+                        </div>
+                    </div>
+                    <div class="step">
+                        <div class="step-number">4</div>
+                        <div class="step-content">
+                            <h4>Monitoring & Evaluation</h4>
+                            <p>Track UHI intensity quarterly and adjust strategies based on results</p>
+                        </div>
+                    </div>
+                    <div class="step">
+                        <div class="step-number">5</div>
+                        <div class="step-content">
+                            <h4>Scale & Sustain</h4>
+                            <p>Expand successful interventions and establish long-term governance</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Data Section -->
+    <section id="data" class="section data-section">
+        <div class="container">
+            <h2 class="section-title">Dataset Information</h2>
+            
+            <div class="data-overview">
+                <div class="data-card">
+                    <h3><i class="fas fa-table"></i> Dataset Details</h3>
+                    <div class="data-stats">
+                        <div class="data-stat">
+                            <span class="label">Cities:</span>
+                            <span class="value">50</span>
+                        </div>
+                        <div class="data-stat">
+                            <span class="label">Features:</span>
+                            <span class="value">31</span>
+                        </div>
+                        <div class="data-stat">
+                            <span class="label">States:</span>
+                            <span class="value">20</span>
+                        </div>
+                        <div class="data-stat">
+                            <span class="label">Data Points:</span>
+                            <span class="value">1,550</span>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="data-card">
+                    <h3><i class="fas fa-download"></i> Downloads</h3>
+                    <div class="download-links">
+                        <a href="../data/processed/indian_cities_enhanced_uhi_dataset_20251202_125234.csv" class="download-btn" target="_blank">
+                            <i class="fas fa-file-csv"></i> Download Dataset (CSV)
+                        </a>
+                        <a href="../docs/DATASET_FEATURES_GUIDE.md" class="download-btn" target="_blank">
+                            <i class="fas fa-book"></i> Feature Guide
+                        </a>
+                        <a href="../docs/PROJECT_SUMMARY.md" class="download-btn" target="_blank">
+                            <i class="fas fa-file-alt"></i> Full Report
+                        </a>
+                    </div>
+                </div>
+
+                <div class="data-card">
+                    <h3><i class="fas fa-link"></i> Data Sources</h3>
+                    <ul class="sources-list">
+                        <li><i class="fas fa-cloud"></i> Open-Meteo API - Weather Data</li>
+                        <li><i class="fas fa-mountain"></i> Open-Elevation API - Terrain Data</li>
+                        <li><i class="fas fa-users"></i> Census of India - Demographics</li>
+                        <li><i class="fas fa-calculator"></i> Calculated Metrics - UHI Factors</li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-section">
+                    <h4>Urban Heat Island Dashboard</h4>
+                    <p>Comprehensive analysis of 50 major Indian cities for climate-resilient urban planning.</p>
+                </div>
+                <div class="footer-section">
+                    <h4>Quick Links</h4>
+                    <ul>
+                        <li><a href="#overview">Overview</a></li>
+                        <li><a href="#visualizations">Visualizations</a></li>
+                        <li><a href="#insights">Insights</a></li>
+                        <li><a href="#recommendations">Recommendations</a></li>
+                    </ul>
+                </div>
+                <div class="footer-section">
+                    <h4>Documentation</h4>
+                    <ul>
+                        <li><a href="../README.md">Project README</a></li>
+                        <li><a href="../docs/PROJECT_SUMMARY.md">Project Summary</a></li>
+                        <li><a href="../docs/DATASET_FEATURES_GUIDE.md">Feature Guide</a></li>
+                    </ul>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                <p>&copy; 2025 Urban Heat Island Monitoring System | Building cooler, greener, more livable Indian cities</p>
+            </div>
+        </div>
+    </footer>
+
+    <!-- JavaScript -->
+    <script src="static/js/script.js"></script>
+</body>
+</html>
+
