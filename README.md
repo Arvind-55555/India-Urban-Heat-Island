@@ -5,6 +5,19 @@
 [![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)](https://opensource.org/licenses/MIT)
 [![Data Sources](https://img.shields.io/badge/Data-Real--time%20APIs-green.svg)](# "Open-Meteo, Open-Elevation")
 
+## 🌐 Live Dashboard
+
+**View the Interactive Dashboard:** [https://arvind-55555.github.io/India-Urban-Heat-Island/](https://arvind-55555.github.io/India-Urban-Heat-Island/)
+
+Experience the complete UHI analysis with:
+- 📊 Interactive visualizations
+- 🔍 Key insights and findings
+- 📈 Top cities by UHI intensity
+- 🌳 Vegetation impact analysis
+- 💡 Actionable recommendations
+
+---
+
 ## Project Overview
 
 A comprehensive Urban Heat Island monitoring and analysis system that collects real-time meteorological, environmental, and urban form data for 50 major Indian cities. The system integrates multiple data sources to provide insights into UHI intensity and contributing factors.
@@ -37,7 +50,9 @@ urban_heat_island/
 ├── outputs/
 │   ├── visualizations/         # Generated charts and plots
 │   └── reports/                # Analysis summaries
-├── docs/                       # Project documentation
+├── documentation/              # Project documentation (MD files)
+├── docs/                       # GitHub Pages (live dashboard)
+├── web_dashboard/              # Dashboard source files
 ├── tools/                      # Utility scripts
 ├── README.md                   # This file
 └── requirements.txt            # Python dependencies
@@ -333,12 +348,14 @@ Urban Heat Islands occur when cities experience higher temperatures than surroun
 
 ## Documentation
 
-Detailed documentation available in the `docs/` folder:
+Detailed documentation available in the `documentation/` folder:
 
 - **DATASET_FEATURES_GUIDE.md** - Comprehensive feature descriptions
 - **PROJECT_SUMMARY.md** - Complete project overview and findings
-- **METHODOLOGY.md** - Data collection and calculation methods
-- **API_REFERENCE.md** - API endpoints and usage
+- **WEB_DASHBOARD_SUMMARY.md** - Dashboard features and usage
+- **QUICK_START_DASHBOARD.md** - Quick start guide
+
+**Live Dashboard:** [https://arvind-55555.github.io/India-Urban-Heat-Island/](https://arvind-55555.github.io/India-Urban-Heat-Island/)
 
 ---
 
@@ -352,7 +369,7 @@ Detailed documentation available in the `docs/` folder:
 - [ ] **Neighborhood-level Analysis** - Within-city variations
 - [ ] **Historical Trends** - 5-10 year comparisons
 - [ ] **Machine Learning Models** - Predict future UHI intensity
-- [ ] **Real-time Dashboard** - Web-based monitoring interface
+- [x] **Interactive Dashboard** - Web-based monitoring interface (✅ Live on GitHub Pages!)
 - [ ] **Mobile App** - Citizen science data collection
 
 ---
